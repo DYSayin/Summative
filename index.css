@@ -17,6 +17,8 @@ body{
 }
 
 .menu{
+  position: sticky;
+  top: 0px;
   background-color: black;
   margin: 0px;
   overflow: hidden;
@@ -29,7 +31,6 @@ body{
   font-size: 18px;
   letter-spacing: 1px;
   box-sizing: border-box;
-  float: left;
   display: inline-block;
   color: #f2f2f2;
   text-align: center;
@@ -40,3 +41,61 @@ body{
   background: #ff9f1c;
   color: black;
 }
+
+
+.image-container{
+  position: relative;
+  z-index: -1;
+  top: 0px;
+} 
+
+.image-container .image{
+  max-width: 100%;
+  max-height: 100vh;
+  width: 2000px;
+  height: 2000px;
+}
+
+.content{
+  padding: 0px 24px;
+  text-align: justify;
+  font-size: 2opx;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+  }
+
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
