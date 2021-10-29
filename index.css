@@ -5,15 +5,20 @@ body{
 }
 
 .header{
-  padding: 6px 24x;
-  background: rgba(red, green, blue, alpha);
+  background: url(Formative.Panda.4.jpg);
+  padding: 60px 24px;
   text-align: left;
-  color: white;
-  margin: 0px;
+  color: rgb(2, 255, 78);
+  margin: 1px;
   letter-spacing: 1px;
   font: caption;
   font-size: 24px;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.headerintext{
+  background-color: white;
 }
 
 .menu{
