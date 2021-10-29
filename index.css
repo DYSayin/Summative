@@ -1,7 +1,7 @@
 body{
   padding: 0px;
   margin: 0px;
-  background: #e1e1e1;
+  background: #ffffff;
 }
 
 .header{
@@ -18,6 +18,7 @@ body{
 }
 
 .headerintext{
+  font-family: 'Times New Roman', Times, serif;
   background-color: white;
   border-radius: 50%;
   opacity: 0.9;
@@ -61,8 +62,8 @@ body{
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  width: 400px;
-  height: 300px;
+  width: 900px;
+  height: 600px;
 }
 
 .content{
@@ -97,11 +98,31 @@ body{
   }
 }
 
+.article1{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.article2{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.article3{
+  font-family: 'Times New Roman', Times, serif;
+}
 
 
+table, th, td {
+  height: 50px;
+  width: 30px;
+  border:1px solid black;
+}
 
-
-
+.graph1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 
 
