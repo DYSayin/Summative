@@ -120,21 +120,21 @@ body{
   margin-bottom: 30px;
   width: 50%;
   width: 1330px;
-  height: 780px;
+  height: 820px;
 }
 
 
 .image-container3{
   position: relative;
   z-index: -1;
-  top: 350px;
+  top: 2px;
 } 
 
 .image-container3 .image3{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: -50px;
+  margin-bottom: -70px;
   width: 50%;
   width: 1330px;
   height: 880px;
@@ -193,7 +193,7 @@ body{
   margin-left: -50px;
   margin-right: -50px;
   margin-top: 0px;
-  margin-bottom: -155px;
+  margin-bottom: 20px;
   padding: 100px 80px;
 }
 
@@ -213,6 +213,17 @@ table, th, td {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  margin-top: 20px;
+}
+
+.graphtext {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  background-color: rgb(253, 214, 220);
+  border-radius: 50%;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding: 35px 20px;
 }
 
 .tabletext {
@@ -220,6 +231,11 @@ table, th, td {
   text-align: center;
   background-color: rgb(253, 214, 220);
   border-radius: 50%;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 50px;
+  margin-top: 150px;
+  padding: 20px 10px;
 }
 
 .sources{
@@ -232,11 +248,21 @@ table, th, td {
   background-repeat: no-repeat; 
   background-size: 100% 100%;
   
+  
+}
+
+.GiantPandaRange {
+  margin-left: 500px;
+  margin-top: 150px;
+ 
 }
 
 
+
+
+
 a:link {
-  color: rgb(255, 238, 0);
+  color: rgb(235, 11, 11);
   text-decoration: none;
   font-family: 'Times New Roman', Times, serif;
 }
