@@ -10,7 +10,7 @@ body {
 
 /* Contain the background photo of the first two articles */
 .container {
-  background-image: url("./assets/b5.jpg");
+  background-image: url("./assets/New_Photos_10.png.jpg");
   background-repeat: no-repeat;
   color: black;
   height: 100%;
@@ -25,26 +25,30 @@ body {
 /* 'Biggest thread of giant panda' text */
 .headerintext {
   font-family: "Times New Roman", Times, serif;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0.9;
-  margin-left: 400px;
-  margin-right: 400px;
-  padding-top: 20px;
-  padding-bottom: 0%;
-  color: #5cb85c;
+  text-align: center;
+  padding: 3%;
+}
+
+.text-dark {
+  font-size: 50px;
+}
+
+.header {
+  margin-top: 50px;
+  background-color: aqua;
+  width: 100%;
+  height: 150px;
+  background: url("./assets/Backgrounds_1.png") no-repeat center;
+  background-size: cover;
 }
 
 /* Add and design the hoover for list items and articles */
 li:hover,
 h1:hover {
-  background-color: #057e15;
+  background-color: aqua;
 }
 
-.content {
-  padding: 0px 24px;
-}
-
+/* Articles.. */
 .article1 {
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
@@ -72,6 +76,32 @@ h1:hover {
   text-align: center;
 }
 
+.article4 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+
+.article4header1 {
+  text-align: center;
+}
+
+.iframe-container {
+  position: relative;
+  width: 80%;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
+
+/* Table */
 table,
 th,
 td {
@@ -89,78 +119,58 @@ td {
   margin-top: 20px;
 }
 
-/* Text of the graph, has green backcolour */
+/* Text of the graph */
 .graphtext {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
-  background-color: #057e15;
-  margin: 100px 100px 70px 100px;
-  min-height: 80px;
+  background-color: aqua;
+  width: 100%;
+  height: 125px;
+  background: url("./assets/Backgrounds_1.png") no-repeat center;
+  background-size: cover;
 }
 
+/* Text of the table */
 .tabletext {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
-  background-color: #057e15;
-
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-bottom: 100px;
-  margin-top: 150px;
-  min-height: 80px;
+  background-color: aqua;
+  width: 100%;
+  height: 75px;
+  background: url("./assets/Backgrounds_1.png") no-repeat center;
+  background-size: cover;
 }
 
-.sources {
-  text-align: center;
-  font-size: 25px;
-  background: url(Formative.Background.1.png);
-  margin-top: -112px;
-  margin-bottom: -98px;
-  padding: 70px 30px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-.GiantPandaRange {
+/* Last image of the webpage, the prisoner Panda */
+.GiantPandaPrisoner {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  height: 400px;
-  margin-bottom: -30px;
-  margin-top: -20px;
+  margin-top: 20px;
 }
 
+/* Texts of the links */
 a:link {
-  color: #55c264;
+  color: rgb(255, 38, 0);
   text-decoration: none;
   font-family: "Times New Roman", Times, serif;
 }
 
+/* Hovers */
 a:hover {
-  color: #55c264;
+  color: aqua;
   background-color: transparent;
   text-decoration: underline;
 }
 
-.footer {
-  color: white;
-  text-align: center;
-  font-family: "Times New Roman", Times, serif;
+/* Dropup of the footer */
+.dropup {
+  position: relative;
+  margin: 0 0px 0 50px;
 }
 
-/*  
-html { 
-  background: url(images/bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-*/
-.dropup {
-  margin: 0 500px 0 500px;
-}
+/* Align of the email address of the author in the footer */
 .footerMail {
-  margin-left: -500px;
+  margin-left: 0px;
+  position: relative;
 }
