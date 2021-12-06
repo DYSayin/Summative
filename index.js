@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 function myFunction() {
     alert("Invalid input,Please try again");
 }
 
+// eslint-disable-next-line no-unused-vars
 function getInputValue(){
   var inputVal = document.getElementById("myInput").value;
   console.log(inputVal)  
@@ -10,6 +13,7 @@ function getInputValue(){
 
 
 /* Table's colour buttons */
+// eslint-disable-next-line no-unused-vars
 function changecolour1() {
   var x = document.querySelectorAll("table");
   var i;
