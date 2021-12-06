@@ -52,7 +52,7 @@
   <section id="home" class="p-5">
     <div class="header">
       <div class="headerintext">
-        <h3 class='text-dark'>Biggggest Threat to Giant Panda: '<em>CLIMATE CHANGE</em>'</h3>
+        <h3 class='text-dark'>Biggest Threat to Giant Panda: '<em>CLIMATE CHANGE</em>'</h3>
       </div>
     </div>
   </section>
@@ -142,91 +142,91 @@
   <br>
   <br>
   
-<!-- Graph-Test -->
+<!-- Test Graph with csv -->
 <canvas id="myChart" width="100" height="20"></canvas>
 
-  <script>
-  let filename = 'formative.csv';
-  
-  d3.csv(filename).then(function(loadedData) {
-      let data = [];
-      let labels = [];
-  
-      for (let i=0; i <loadedData.length; i++) {
-     // console.log(loadedData[i]);
-  
-      let Year = loadedData[i].year;
-      labels.push(year);
-  
-      let Glob = loadedData[i].glob;
-      labels.data(glob);
-  
-      let NHem = loadedData[i].nhem;
-      labels.data(nhem);
-     
-      let SHem = loadedData[i].shem;
-      labels.data(shem);
-      }
-  
-      console.log(data);
-  });
-  
-  let options = {
-      type: 'line',
-      data: {
-          labels: labels, // the labels we loaded
-          datasets: [{
-              data: data, // the data we loaded!
-              fill: false,
-              pointRadius: 0,
-              pointHoverRadius: 0, 
-              borderColor: 'rgb(100,100,100)'
-          }]
-      }
-  };
-  
-  
-  /* 
-      const ctx = document.getElementById('myChart').getContext('2d');
-      const myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              tension: 0.4
-          }]
-      },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true
-              }
-          }
-      }
-  });
-   */
-  
-  </script>
+<script>
+let filename = 'formative.csv';
 
-<!-- Deneme Deneme -->
+d3.csv(filename).then(function(loadedData) {
+    let data = [];
+    let labels = [];
+
+    for (let i=0; i <loadedData.length; i++) {
+   // console.log(loadedData[i]);
+
+    let Year = loadedData[i].year;
+    labels.push(year);
+
+    let Glob = loadedData[i].glob;
+    labels.data(glob);
+
+    let NHem = loadedData[i].nhem;
+    labels.data(nhem);
+   
+    let SHem = loadedData[i].shem;
+    labels.data(shem);
+    }
+
+    console.log(data);
+});
+
+let options = {
+    type: 'line',
+    data: {
+        labels: labels, // the labels we loaded
+        datasets: [{
+            data: data, // the data we loaded!
+            fill: false,
+            pointRadius: 0,
+            pointHoverRadius: 0, 
+            borderColor: 'rgb(100,100,100)'
+        }]
+    }
+};
+
+
+/* 
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            tension: 0.4
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+ */
+
+</script>
+
+<!-- Test Graph without csv -->
 <canvas id="myChart" width="100" height="20"></canvas>
 <script>
 
@@ -273,10 +273,13 @@ const myChart = new Chart(ctx, {
 
 
 <!-- Graph of temperature change over the years -->
-  <div class="graphtext">
-    <br>
-    <h3>This plot shows the global temperature change from 1850 to 2018, compared to the 1961-1990 average temperature</h3> 
+<div class="graphtext">
+  <div class="graphintext">
+    <h3 class='text-dark'>This plot shows the global temperature change from 1850 to 2018, compared to the 1961-1990 average temperature</h3>
   </div>
+</div>
+
+  
   <div class="graph1">
     <img src="./assets/graph1.png " class="rounded mx-auto d-block img-fluid"
     alt="temperature change from 1850 to 2018" >
@@ -292,9 +295,10 @@ const myChart = new Chart(ctx, {
   <br>
 
   <!-- Table of changes in global climate and weather events -->
-  <div  class="tabletext">
-    <br>
-    <h3>This table shows the changes in global climate and weather events</h3> 
+  <div class="tabletext">
+    <div class="tableintext">
+      <h3 class='text-dark'>This table shows the changes in global climate and weather events</h3>
+    </div>
   </div>
 
   
