@@ -1,2 +1,3 @@
-# formative
-Formative assignment of Programming Gold
+# summative
+
+Summative assignment of Programming Gold

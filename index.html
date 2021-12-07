@@ -146,128 +146,66 @@
 <canvas id="myChart" width="100" height="20"></canvas>
 
 <script>
-let filename = 'formative.csv';
-
-d3.csv(filename).then(function(loadedData) {
-    let data = [];
-    let labels = [];
-
-    for (let i=0; i <loadedData.length; i++) {
-   // console.log(loadedData[i]);
-
-    let Year = loadedData[i].year;
-    labels.push(year);
-
-    let Glob = loadedData[i].glob;
-    labels.data(glob);
-
-    let NHem = loadedData[i].nhem;
-    labels.data(nhem);
-   
-    let SHem = loadedData[i].shem;
-    labels.data(shem);
-    }
-
-    console.log(data);
-});
-
-let options = {
-    type: 'line',
-    data: {
-        labels: labels, // the labels we loaded
-        datasets: [{
-            data: data, // the data we loaded!
-            fill: false,
-            pointRadius: 0,
-            pointHoverRadius: 0, 
-            borderColor: 'rgb(100,100,100)'
-        }]
-    }
-};
-
-
-/* 
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            tension: 0.4
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
- */
 
 </script>
 
 <!-- Test Graph without csv -->
 <canvas id="myChart" width="100" height="20"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.2.0/d3.min.js" integrity="sha512-uM8yWltkQ6S5r4ItJehZfUM8PUBPYkA8L1AkbRYjvH5ALHIFjF7J/QEyhda4saz4Jth65TyXXGFDyeZw+MoOKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
-drawChart() ;
+const chartData = '/formative/data'
 
-async function drawChart(){}
+//parse the file from CSV to JSON
+d3.csv(chartData).then(function(datapoints) {
+    console.log()
+    const Glob = [];
+    const NHem = [];
+    const SHem = [];
 
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            tension: 0.4
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
+    for (i = 0; i < datapoints.length; i++) {
+        Glob.push(datapoints[i].Glob)
+        NHem.push(datapoints[i].NHem)
+        SHem.push(datapoints[i].SHem)
+    }
+    
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: Glob,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
+    });
+    
 });
 </script>
 
@@ -300,7 +238,8 @@ const myChart = new Chart(ctx, {
       <h3 class='text-dark'>This table shows the changes in global climate and weather events</h3>
     </div>
   </div>
-
+  <br>
+  <br>
   
   <div class="table-responsive">
 <table class="table table-bordered table-hover">
@@ -361,11 +300,10 @@ const myChart = new Chart(ctx, {
   <!-- Colour change buttons of the Graph -->
 <div class="btn-group" role="group" aria-label="Basic example">
 <button type="button" class="btn btn-primary" onclick="changecolour1()">Blue</button>
-<button type="button" class="btn btn-secondary" onclick="changecolour2()">Gray</button>
+<button type="button" class="btn btn-warning" onclick="changecolour2()">Orange</button>
 <button type="button" class="btn btn-success" onclick="changecolour3()">Green</button>
 <button type="button" class="btn btn-danger" onclick="changecolour4()">Red</button>
-<button type="button" class="btn btn-warning" onclick="changecolour5()">Orange</button>
-<button type="button" class="btn btn-light" onclick="changecolour6()">Reset</button>
+<button type="button" class="btn btn-light" onclick="changecolour5()">Reset</button>
 </div>
 
 
@@ -376,22 +314,24 @@ const myChart = new Chart(ctx, {
   <br>
 
   <!-- Article About Giant Panda -->
-  <div class="article4">
-    <article>
-      <header>
-        <div class="article4header1">
-         <h1><b>Giant Pandas</b></h1> 
+  <div class="container2 ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="full-width-div my-5">
+                      <h1 class ="text-center"><b>Giant Pandas</b></h1>
+                      <ul class="">
+                        <li class="">The giant panda (Ailuropoda melanoleuca)also known as the panda bear (or simply the panda), is a bear native to  <a href="https://en.wikipedia.org/wiki/South_Central_China">South Central China</a>.</li>
+                        <li class="">Giant panda has lived in bamboo forests for several million years. It is a highly specialized animal, with unique adaptations.The panda's thick, wooly coat keeps it warm in the cool forests of its habitat. Giant pandas have large molar teeth and strong jaw muscles for crushing tough bamboo.</li>
+                        <li class="">Giant Panda population numbers have begun to increase in parts of their range, but their overall population size still remains very small because of the long generation time and low reproductive rate. These limit their ability to adapt to a changing climate.</li>
+                        <li class="">There is an interesting and fun website to learn more about The Giant Panda: <a href="https://www.natgeokids.com/uk/discover/animals/general-animals/ten-panda-facts/"><b>10 Facts About Pandas</b></a></li>
+                         </ul>
+                
+            </div>
         </div>
-          <ul style="list-style-type: disc;">
-            <li>The giant panda (Ailuropoda melanoleuca)also known as the panda bear (or simply the panda), is a bear native to  <a href="https://en.wikipedia.org/wiki/South_Central_China">South Central China</a>.</li>
-            <li>Giant panda has lived in bamboo forests for several million years. It is a highly specialized animal, with unique adaptations.The panda's thick, wooly coat keeps it warm in the cool forests of its habitat. Giant pandas have large molar teeth and strong jaw muscles for crushing tough bamboo.</li>
-            <li>Giant Panda population numbers have begun to increase in parts of their range, but their overall population size still remains very small because of the long generation time and low reproductive rate. These limit their ability to adapt to a changing climate.</li>
-            <li>There is an interesting and fun website to learn more about The Giant Panda: <a href="https://www.natgeokids.com/uk/discover/animals/general-animals/ten-panda-facts/"><b>10 Facts About Pandas</b></a></li>
-          </ul>
-      </header>
-    </article>
-  </div>
-  
+    </div>
+</div>
+
+
   <br>
   <br>
 
@@ -401,24 +341,22 @@ const myChart = new Chart(ctx, {
   
   <!-- Last article. How pandas are affecting by 'Climate Change' -->
 
-  <div class="article3">
-    <article>
-      <header>
-        <div class="article3header1">
-
-         <h1><b>How Giant Pandas are effecting by '<em>Climate Change</em>'?</b></h1> 
+  <div class="container1 ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="full-width-div my-5">
+                      <h1 class ="text-center"><b>How Giant Pandas are effecting by '<em>Climate Change</em>'?</b></h1>
+                      <ul class="">
+                        <li class="">Though they are one of the most beloved animal species on Earth, <a href="https://www.livescience.com/24156-baby-panda-cub-pictures.html"> giant pandas</a> aren't safe from the devastating effects of climate change.</li>
+                        <li class="">According to a new study, projected temperature increases in China over the next century will likely seriously hinder bamboo, almost the sole source of food for endangered pandas.</li>
+                        <li class="">Only if bamboo can move to new habitats at higher elevations will pandas stand a chance, the researchers said.</li>
+                        <li class="">However, if conservation programs wait too long, human inhabitants and activities could claim all of the new habitats capable of supporting bamboo in a warming world.</li>
+                      </ul>
+                
+            </div>
         </div>
-          <ul style="list-style-type: disc;">
-            <li>Though they are one of the most beloved animal species on Earth, <a href="https://www.livescience.com/24156-baby-panda-cub-pictures.html"> giant pandas</a> aren't safe from the devastating effects of climate change.</li>
-
-            <li>According to a new study, projected temperature increases in China over the next century will likely seriously hinder bamboo, almost the sole source of food for endangered pandas.</li>
-            <li>Only if bamboo can move to new habitats at higher elevations will pandas stand a chance, the researchers said.</li>
-            <li>However, if conservation programs wait too long, human inhabitants and activities could claim all of the new habitats capable of supporting bamboo in a warming world.</li>
-          </ul>
-      </header>
-    </article>
-  </div>
-
+    </div>
+</div>
 
   <br>
   <br>
@@ -434,12 +372,39 @@ const myChart = new Chart(ctx, {
   <br>
   <br>
 
-
-
-
-
-
-
+  <form class="container3" id="form">
+    <br>
+    <h2 class ="text-center"><b>Subscribe for More Information</h2>
+    <br>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1"> Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <input type="button" onclick="myFunction2()" value="Submit">
+   <!--   <button type="submit" class="btn btn-primary" onclick="myFunction2()" >Submit</button> -->
+    <br>
+    <br>
+    <br>
+    <br>
+  </form>
 
   <!-- FOOTER -->
   <section id="sources" class="p-5">

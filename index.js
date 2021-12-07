@@ -4,12 +4,20 @@ function myFunction() {
     alert("Invalid input,Please try again");
 }
 
+function myFunction2() {
+  alert("Thank you for submittig. We will keep in touch with you!");
+}
+
 // eslint-disable-next-line no-unused-vars
 function getInputValue(){
   var inputVal = document.getElementById("myInput").value;
-  console.log(inputVal)  
+  console.log(inputVal);  
 }
 
+function myFunction3() {
+  var inputVal2 = document.getElementById("exampleInputEmail1").submit();
+  console.log(inputVal2); 
+}
 
 
 /* Table's colour buttons */
@@ -26,7 +34,7 @@ function changecolour2() {
   var x = document.querySelectorAll("table");
   var i;
   for (i = 0; i < x.length; i++) {
-      x[i].style.backgroundColor = "gray";
+      x[i].style.backgroundColor = "orange";
   }
 }
 
@@ -46,15 +54,9 @@ function changecolour4() {
   }
 }
 
-function changecolour5() {
-  var x = document.querySelectorAll("table");
-  var i;
-  for (i = 0; i < x.length; i++) {
-      x[i].style.backgroundColor = "orange";
-  }
-}
 
-function changecolour6() {
+
+function changecolour5() {
   var x = document.querySelectorAll("table");
   var i;
   for (i = 0; i < x.length; i++) {
