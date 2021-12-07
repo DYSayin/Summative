@@ -222,6 +222,12 @@ a:hover {
 
 /* Align of the email address of the author in the footer */
 .footerMail {
-  margin-left: 0px;
+  margin-left: -200px;
+  margin-right: 20px;
   position: relative;
+}
+
+.button_index {
+  margin-left: auto;
+  margin-right: auto;
 }
