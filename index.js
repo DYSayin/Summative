@@ -8,16 +8,6 @@ function myFunction2() {
   alert("Thank you for submittig. We will keep in touch with you!");
 }
 
-// eslint-disable-next-line no-unused-vars
-function getInputValue(){
-  var inputVal = document.getElementById("myInput").value;
-  console.log(inputVal);  
-}
-
-function myFunction3() {
-  var inputVal2 = document.getElementById("exampleInputEmail1").submit();
-  console.log(inputVal2); 
-}
 
 
 /* Table's colour buttons */
