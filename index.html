@@ -30,15 +30,28 @@
             <a class="nav-link active" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#carouselExampleDark">Gallery</a>
-          </li>
+            <a class="nav-link active" href="#carouselExampleDark">Gallery</a>
+          </li>   
+
           <li class="nav-item">
-            <a class="nav-link" href="#topics">Topics</a>
+            <a class="nav-link active" href="#form">Form</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#sources">Sources</a>
-          </li>
-          
+             
+          <div class="btn-group dropdown">
+            <div class="button_index">
+            <button type="button" class="btn  btn-outline-info dropdown-toggle" data-bs-toggle="dropdown">Topics</button>
+    
+            <div class="dropdown-menu">
+    
+                <a href="#topics" class="dropdown-item">What is Climate Change</a>
+    
+                <a href="#graph" class="dropdown-item">Graph</a>
+                <a href="#table" class="dropdown-item">Table</a>
+                <a href="#giantpanda" class="dropdown-item">Giant Panda</a>
+                <a href="#bamboos" class="dropdown-item">How Giant Pandas are effecting by '<em>Climate Change</em>'? </a>
+            </div>
+          </div>
+         
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -142,19 +155,14 @@
   <br>
   <br>
   
-<!-- Test Graph with csv -->
-<canvas id="myChart" width="100" height="20"></canvas>
 
-<script>
 
-</script>
-
-<!-- Test Graph without csv -->
+<!-- MAIN CHART WITH CSV -->
 <canvas id="myChart" width="100" height="20"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.2.0/d3.min.js" integrity="sha512-uM8yWltkQ6S5r4ItJehZfUM8PUBPYkA8L1AkbRYjvH5ALHIFjF7J/QEyhda4saz4Jth65TyXXGFDyeZw+MoOKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
-const chartData = '/formative/data'
+const chartData = 'http://localhost:8000/graphjs.csv'
 
 //parse the file from CSV to JSON
 d3.csv(chartData).then(function(datapoints) {
@@ -172,7 +180,7 @@ d3.csv(chartData).then(function(datapoints) {
     const ctx = document.getElementById('myChart').getContext('2d');
 
     const myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
@@ -194,7 +202,7 @@ d3.csv(chartData).then(function(datapoints) {
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)'
                 ],
-                borderWidth: 1
+                tension: 0.4
             }]
         },
         options: {
@@ -210,7 +218,50 @@ d3.csv(chartData).then(function(datapoints) {
 </script>
 
 
+<!-- TEMPLATE FOR THE CHART -->
+
+<canvas id="myChart" width="100" height="20"></canvas>
+<script>
+
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+type: 'line',
+data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],
+        tension: 0.4
+    }]
+},
+options: {
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    }
+}
+});
+</script>
+
 <!-- Graph of temperature change over the years -->
+<section id="graph" class="p-5">
 <div class="graphtext">
   <div class="graphintext">
     <h3 class='text-dark'>This plot shows the global temperature change from 1850 to 2018, compared to the 1961-1990 average temperature</h3>
@@ -231,8 +282,10 @@ d3.csv(chartData).then(function(datapoints) {
   <br>
   <br>
   <br>
+</section>
 
   <!-- Table of changes in global climate and weather events -->
+  <section id="table" class="p-5">
   <div class="tabletext">
     <div class="tableintext">
       <h3 class='text-dark'>This table shows the changes in global climate and weather events</h3>
@@ -240,7 +293,8 @@ d3.csv(chartData).then(function(datapoints) {
   </div>
   <br>
   <br>
-  
+</section>
+
   <div class="table-responsive">
 <table class="table table-bordered table-hover">
   <!-- Data inside the table -->
@@ -295,6 +349,8 @@ d3.csv(chartData).then(function(datapoints) {
 
   </tbody>
 </table>
+
+
   </div>
 
   <!-- Colour change buttons of the Graph -->
@@ -307,6 +363,7 @@ d3.csv(chartData).then(function(datapoints) {
 </div>
 
 
+
   <br>
   <br>
   <br>
@@ -314,6 +371,7 @@ d3.csv(chartData).then(function(datapoints) {
   <br>
 
   <!-- Article About Giant Panda -->
+  <section id="giantpanda" class="p-5">
   <div class="container2 ">
     <div class="row">
         <div class="col-md-12">
@@ -330,7 +388,7 @@ d3.csv(chartData).then(function(datapoints) {
         </div>
     </div>
 </div>
-
+</section>
 
   <br>
   <br>
@@ -340,7 +398,7 @@ d3.csv(chartData).then(function(datapoints) {
   </div>
   
   <!-- Last article. How pandas are affecting by 'Climate Change' -->
-
+  <section id="bamboos" class="p-5">
   <div class="container1 ">
     <div class="row">
         <div class="col-md-12">
@@ -357,7 +415,7 @@ d3.csv(chartData).then(function(datapoints) {
         </div>
     </div>
 </div>
-
+</section>
   <br>
   <br>
   
@@ -372,6 +430,7 @@ d3.csv(chartData).then(function(datapoints) {
   <br>
   <br>
 
+  <section id="form" class="p-5"></section>
   <form class="container3" id="form">
     <br>
     <h2 class ="text-center"><b>Create an Account for More Information</h2>
@@ -405,9 +464,10 @@ d3.csv(chartData).then(function(datapoints) {
     <br>
     <br>
   </form>
+</section>
 
   <!-- FOOTER -->
-  <section id="sources" class="p-5">
+  
   
     <!-- Fixed Bottom navbar by 'Bootstrap' -->
   <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark  bg-dark ">
@@ -450,7 +510,7 @@ d3.csv(chartData).then(function(datapoints) {
   
  
 
-</section>
+
 
 </body>
 </html>
