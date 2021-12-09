@@ -158,11 +158,13 @@
 
 
 <!-- MAIN CHART WITH CSV -->
-<canvas id="myChart" width="100" height="20"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.2.0/d3.min.js" integrity="sha512-uM8yWltkQ6S5r4ItJehZfUM8PUBPYkA8L1AkbRYjvH5ALHIFjF7J/QEyhda4saz4Jth65TyXXGFDyeZw+MoOKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<canvas id="myChart" width="100" height="20"></canvas>
+
 <script>
 
-const chartData = 'http://localhost:8000/graphjs.csv'
+const chartData = 'http://localhost:8000/formative/data/graphjs.csv'
 
 //parse the file from CSV to JSON
 d3.csv(chartData).then(function(datapoints) {
@@ -218,13 +220,17 @@ d3.csv(chartData).then(function(datapoints) {
 </script>
 
 
+
+
+
+
 <!-- TEMPLATE FOR THE CHART -->
 
-<canvas id="myChart" width="100" height="20"></canvas>
+<canvas id="myChart0" width="100" height="20"></canvas>
 <script>
 
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
+const ctx0 = document.getElementById('myChart0').getContext('2d');
+const myChart0 = new Chart(ctx0, {
 type: 'line',
 data: {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -264,9 +270,91 @@ options: {
 <section id="graph" class="p-5">
 <div class="graphtext">
   <div class="graphintext">
-    <h3 class='text-dark'>This plot shows the global temperature change from 1850 to 2018, compared to the 1961-1990 average temperature</h3>
+    <h3 class='text-dark'>This plot shows the global temperature changes from 1880 to 2020 in Global, Northern Hemisphere and Southern Hemisphere</h3>
   </div>
 </div>
+
+<!-- MANUALLY CREATED CHART  -->
+
+<div class="chartCard">
+  <div class="chartBox">
+    <canvas id="myChart2"></canvas>
+  </div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const Temperatures = [
+  { year: '1880', changes: { Glob: -0.16, NHem: -0.29, SHem: -0.04} },
+  { year: '1890', changes: { Glob: -0.35, NHem: -0.38, SHem: -0.32} },
+  { year: '1900', changes: { Glob: -0.08, NHem: -0.09, SHem: -0.06} },
+  { year: '1910', changes: { Glob: -0.44, NHem: -0.45, SHem: -0.43} },
+  { year: '1920', changes: { Glob: -0.28, NHem: -0.31, SHem: -0.24} },
+  { year: '1930', changes: { Glob: -0.16, NHem: -0.02, SHem: -0.29} },
+  { year: '1940', changes: { Glob: 0.13, NHem: 0.18, SHem: 0.09} },
+  { year: '1950', changes: { Glob: -0.17, NHem: -0.15, SHem: -0.21} },
+  { year: '1960', changes: { Glob: -0.03, NHem: 0.08, SHem: -0.13} },
+  { year: '1970', changes: { Glob: 0.03, NHem: -0.04, SHem: 0.09} },
+  { year: '1980', changes: { Glob: 0.26, NHem: 0.17, SHem: 0.35} },
+  { year: '1990', changes: { Glob: 0.45, NHem: 0.53, SHem: 0.37} },
+  { year: '2000', changes: { Glob: 0.39, NHem: 0.5, SHem: 0.29} },
+  { year: '2010', changes: { Glob: 0.72, NHem: 0.9, SHem: 0.55} },
+  { year: '2020', changes: { Glob: 1.02, NHem: 1.36, SHem: 0.68} }
+];
+// setup 
+const data = {
+  datasets: [{
+    label: 'Glob',
+    data: Temperatures,
+    backgroundColor: 'rgba(255, 99, 132, 0.2)' ,
+    borderColor: 'rgba(255, 99, 132, 1)',
+    tension: 0.4,
+    parsing: {
+      xAxisKey: 'year',
+      yAxisKey: 'changes.Glob'
+    }
+  },{
+    label: 'NHem',
+    data: Temperatures,
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderColor: 'rgba(54, 162, 235, 0.2)',
+    tension: 0.4,
+    parsing: {
+      xAxisKey: 'year',
+      yAxisKey: 'changes.NHem'
+    }
+  },{
+    label: 'SHem',
+    data: Temperatures,
+    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+    borderColor: 'rgba(255, 159, 64, 0.2)',
+    tension: 0.4,
+    parsing: {
+      xAxisKey: 'year',
+      yAxisKey: 'changes.SHem'
+    }
+  }]
+};
+
+// config 
+const config = {
+  type: 'line',
+  data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+};
+
+// render init block
+const myChart2 = new Chart(
+  document.getElementById('myChart2'),
+  config
+);
+</script>
+
 
   
   <div class="graph1">
@@ -491,7 +579,8 @@ options: {
                 <a href="https://www.bbc.co.uk/news/science-environment-24021772" class="dropdown-item">(2) Information from BBC</a>
                 <a href="https://www.metoffice.gov.uk/weather/climate-change/effects-of-climate-change" class="dropdown-item">(3) Table and Graph from MetOffice</a>
                 <a href="https://www.worldwildlife.org/pages/giant-pandas-and-climate" class="dropdown-item">(4)Photo from WWF</a>
-                <a href="https://www.w3schools.com/" class="dropdown-item">(5) HTML and CSS guideline from w3schools</a>
+                <a href="https://nationalzoo.si.edu/animals/giant-panda" class="dropdown-item">(5) Information and Photos from Smithsonian's</a>
+                <a href="https://www.w3schools.com/" class="dropdown-item">(6) HTML and CSS guideline from w3schools</a>
             </div>
           </div>
 
@@ -508,9 +597,6 @@ options: {
   </nav>
 
   
- 
-
-
 
 </body>
 </html>
