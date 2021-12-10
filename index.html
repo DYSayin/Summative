@@ -17,7 +17,7 @@
 
 
 <body>
-  <!-- Sticky Navigation Bar by 'Bootstrap' -->
+  <!-- Sticky Navigation Bar by 'Bootstrap'  link==>>"https://getbootstrap.com/docs/4.0/components/navbar/"-->
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
       <img src="./assets/logo.png" width="30" height="30" ml = "20" class="d-in align-top mx-3" alt="">
@@ -73,7 +73,7 @@
 
 
 
-  <!-- Gallery SlideShow by 'Bootstrap' -->
+  <!-- Gallery SlideShow by 'Bootstrap'   link==>> "https://getbootstrap.com/docs/4.0/components/carousel/" -->
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -110,7 +110,7 @@
   </div>
   
   
-  <!-- Topic section- 'What is Climate Change' -->
+  <!-- Topic section- 'What is Climate Change'.    I had some help while creating this container from this link ==>> "https://getbootstrap.com/docs/4.0/layout/grid/" -->
   
   <div class="container ">
     <section id="topics" class="p-5"></section>
@@ -149,13 +149,7 @@
     </div>
 </div>
  
-  
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
+
 
 <!-- Graph of temperature change over the years -->
 <section id="graph" class="p-5">
@@ -165,7 +159,10 @@
   </div>
 </div>
 
-<!-- MAIN CHART WITH CSV -->
+<!-- MAIN CHART WITH CSV -->   
+<!-- I used this links to create this Chart:
+      -For Templates; "https://www.chartjs3.com/docs/chart/getting-started/"
+      -Adding CSV; "https://youtu.be/HFAjrai-d58" and "https://youtu.be/xgDD30ZLxVo"-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.2.0/d3.min.js" integrity="sha512-uM8yWltkQ6S5r4ItJehZfUM8PUBPYkA8L1AkbRYjvH5ALHIFjF7J/QEyhda4saz4Jth65TyXXGFDyeZw+MoOKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
@@ -173,6 +170,7 @@
 
 
 <script>
+
 
 const chartData = 'data/graphjs.csv'
 
@@ -189,8 +187,10 @@ d3.csv(chartData).then(function(datapoints) {
         SHem.push(datapoints[i].SHem)
     }
     
+    
     const ctx = document.getElementById('myChart').getContext('2d');
 
+    
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -240,12 +240,6 @@ d3.csv(chartData).then(function(datapoints) {
   </div>
 
   <br>
-  <br>
-
-  <br>
-  <br>
-  <br>
-  <br>
 </section>
 
   <!-- Table of changes in global climate and weather events -->
@@ -255,8 +249,6 @@ d3.csv(chartData).then(function(datapoints) {
       <h3 class='text-dark'>This table shows the changes in global climate and weather events</h3>
     </div>
   </div>
-  <br>
-  <br>
 </section>
 
   <div class="table-responsive">
@@ -362,7 +354,8 @@ d3.csv(chartData).then(function(datapoints) {
     <iframe width="560" height="315" src="https://www.youtube.com/embed/pNff91GIIUg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   
-  <!-- Last article. How pandas are affecting by 'Climate Change' -->
+
+  <!-- Article. How pandas are affecting by 'Climate Change' -->
  
   <div class="container1 ">
     <section id="bamboos" class="p-5">
@@ -383,105 +376,140 @@ d3.csv(chartData).then(function(datapoints) {
 </div>
 </section>
 
+<!-- Pandas' Gifs  -->
+<div class="Gifs">
 
-  <canvas id="myChart0" width="100" height="35"></canvas>
+<div class="gif1">
+<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/19b18a22-f548-44d2-a940-0d31c7a5bd0a/d8bepog-dc084eb9-47c0-4c49-8802-bf2a03bfa460.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE5YjE4YTIyLWY1NDgtNDRkMi1hOTQwLTBkMzFjN2E1YmQwYVwvZDhiZXBvZy1kYzA4NGViOS00N2MwLTRjNDktODgwMi1iZjJhMDNiZmE0NjAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TRdyQwDHB59IbkahrHaKmteiZZ59g-Us09su8MOPMXo" alt="Nature" class="responsive0" width="300px" height="300px">
+</div>
+
+<div class="gif1">
+<img src="https://i.pinimg.com/originals/98/1c/d9/981cd9b99946eb8ef6605e66906e8780.gif" alt="Nature" class="responsive00" width="300px" height="300px">
+</div>
+
+</div>
+
+
+
+<!-- Group photo of panda eating bamboo -->
+<div class="GiantPandaBamboo">
+   <img src="./assets/New_Photos_3.png " class="rounded mx-auto d-block w-70 h-50 img-fluid"
+   alt="giantpandabamboo">
+</div>
+
+
+
+<!-- Header of Bar Chart -->
+
+  <div class="barcharttext">
+    <div class="barchartintext">
+      <h3 class='text-dark'>This bar chart shows the changes in global climate and weather events</h3>
+    </div>
+  </div>
+
+
+<!-- Second Graph, Bar Chart -->
+<!-- I used this links to create this Chart:
+      -For Templates; "https://www.chartjs3.com/docs/chart/getting-started/"
+      -Adding CSV; "https://youtu.be/HFAjrai-d58" and "https://youtu.be/xgDD30ZLxVo"-->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.2.0/d3.min.js" integrity="sha512-uM8yWltkQ6S5r4ItJehZfUM8PUBPYkA8L1AkbRYjvH5ALHIFjF7J/QEyhda4saz4Jth65TyXXGFDyeZw+MoOKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<canvas id="myChart1" width="100" height="30"></canvas>
+
+
 <script>
 
-const ctx0 = document.getElementById('myChart0').getContext('2d');
-const myChart0 = new Chart(ctx0, {
-type: 'bar',
-data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-        label: '# of Votes',
-        data: [312, 193, 323, 435, 232, 233],
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)'
-        ],
-        borderColor: [
-            'rgba(255, 99, 132, 1)'
-        ],
-        borderWidth: 1
-    },{
-        label: '# of Votes2',
-        data: [1223, 1339, 2213, 1325,321, 223],
-        backgroundColor: [
-            'rgba(54, 162, 235, 0.2)'
-        ],
-        borderColor: [
-            'rgba(54, 162, 235, 1)'
-        ],
-        borderWidth: 1
-    },{
-        label: '# of Votes3',
-        data: [1442, 129, 113, 225, 332, 443],
-        backgroundColor: [
-            'rgba(255, 206, 86, 0.2)'
-        ],
-        borderColor: [
-            'rgba(255, 206, 86, 1)'
-        ],
-        borderWidth: 1
-    },{
-        label: '# of Votes4',
-        data: [1222, 1339, 344, 225, 122, 323],
-        backgroundColor: [
-            'rgba(75, 192, 192, 0.2)'
-        ],
-        borderColor: [
-            'rgba(75, 192, 192, 1)'
-        ],
-        borderWidth: 1
-    }]
-},
-options: {
-    scales: {
-        y: {
-            beginAtZero: true
-        }
+const chartData0 = 'data/pandapopulation.csv'
+
+//parse the file from CSV to JSON
+d3.csv(chartData0).then(function(datapoints) {
+    console.log()
+    const Wild_Population = [];
+    const Population_in_Captivity = [];
+
+    for (i = 0; i < datapoints.length; i++) {
+      Wild_Population.push(datapoints[i].Wild_Population)
+      Population_in_Captivity.push(datapoints[i].Population_in_Captivity)
     }
-}
+    
+    const ctx0 = document.getElementById('myChart1').getContext('2d');
+
+    console.log(Wild_Population)
+    console.log(datapoints)
+
+    const myChart1 = new Chart(ctx0, {
+        type: 'bar',
+        data: {
+            labels: ['1974-1977', '1985-1988', '1999-2003', '2011-2014'],
+            datasets: [{
+                label: 'Wild Population',
+                data: Wild_Population,
+                backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+                borderColor: ['rgba(255, 99, 132, 1)'],
+                borderWidth: 1
+            },{
+                label: 'Population in Captivity',
+                data: Population_in_Captivity,
+                backgroundColor: ['rgba(54, 162, 235, 0.2)'],
+                borderColor: ['rgba(54, 162, 235, 1)' ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
 });
 </script>
+
   
 <br>
 <br>
 
-  <!-- photo of the group of pandas are eating bamboo -->
-  <div class="GiantPandaBamboo">
-    <img src="./assets/New_Photos_3.png " class="rounded mx-auto d-block w-70 h-50 img-fluid"
-    alt="giantpandabamboo">
-  </div>
+
   
 
-<!-- Panda Adoption Part -->
+<!-- Header of the Panda Adoption Part -->
   <section id="adoption" class="p-5">
     <div class="adoptiontext">
       <div class="adoptionintext">
-        <h3 class='text-dark'>You Can Adopt A Panda</h3>
+        <h3 class='text-dark'>Don't Miss the Chance to Adopt a Panda</h3>
       </div>
     </div>
     <br>
     <br>
   </section>
 
-  <div class="PandaAdoption">
 
-    <img src="./assets/Click.here.gif" alt="Nature" class="responsive">
+  
+<!-- Panda Adoption -->
 
-    <a href="https://gifts.worldwildlife.org/gift-center/gifts/Species-Adoptions/Panda.aspx?sc=AWY1800OQ18317A01909RX">
-      <div class="GiantPandaPrisoner">
-        <img src="./assets/panda_image.jpg" class="rounded mx-auto d-block w-50 h-30 img-fluid"
-        alt="giantpandaprisoner">
-      </div>
-    </a>
+<div class="PandaAdoption">
 
-  </div>
+  <img src="./assets/Click.here.gif" alt="Nature" class="responsive">
+
+  <a href="https://gifts.worldwildlife.org/gift-center/gifts/Species-Adoptions/Panda.aspx?sc=AWY1800OQ18317A01909RX">
+     <div class="GiantPandaPrisoner">
+      <img src="./assets/panda_image.jpg" class="rounded mx-auto d-block w-50 h-30 img-fluid"
+      alt="giantpandaprisoner">
+    </div>
+  </a>
+
+</div>
 
 
-  <br>
-  <br>
+<br>
+<br>
 
+
+  <!-- Form for creating an account (by Bootsrap). Link==>> "https://getbootstrap.com/docs/4.0/components/forms/" -->
   <section id="form" class="p-5"></section>
   <form class="container3" id="form">
     <br>
@@ -510,7 +538,7 @@ options: {
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
     <input type="button" onclick="myFunction2()" value="Submit">
-   <!--   <button type="submit" class="btn btn-primary" onclick="myFunction2()" >Submit</button> -->
+
     <br>
     <br>
     <br>
@@ -521,7 +549,7 @@ options: {
   <!-- FOOTER -->
   
   
-    <!-- Fixed Bottom navbar by 'Bootstrap' -->
+    <!-- Fixed Bottom navbar by 'Bootstrap' Link==>> "https://getbootstrap.com/docs/4.1/components/navbar/" -->
   <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark  bg-dark ">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -542,9 +570,9 @@ options: {
     
                 <a href="https://www.bbc.co.uk/news/science-environment-24021772" class="dropdown-item">(2) Information from BBC</a>
                 <a href="https://www.metoffice.gov.uk/weather/climate-change/effects-of-climate-change" class="dropdown-item">(3) Table and Graph from MetOffice</a>
-                <a href="https://www.worldwildlife.org/pages/giant-pandas-and-climate" class="dropdown-item">(4)Photo from WWF</a>
-                <a href="https://nationalzoo.si.edu/animals/giant-panda" class="dropdown-item">(5) Informations and Photos from Smithsonian's</a>
-                <a href="https://en.wikipedia.org/wiki/Giant_panda" class="dropdown-item">(6) Informations from Wikipedia</a>
+                <a href="https://www.worldwildlife.org/pages/giant-pandas-and-climate" class="dropdown-item">(4) Photos from WWF</a>
+                <a href="https://nationalzoo.si.edu/animals/giant-panda" class="dropdown-item">(5) Information and Photos from Smithsonian's</a>
+                <a href="https://en.wikipedia.org/wiki/Giant_panda" class="dropdown-item">(6) Information from Wikipedia</a>
                 <a href="https://www.w3schools.com/" class="dropdown-item">(7) HTML and CSS guideline from w3schools</a>
             </div>
           </div>

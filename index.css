@@ -23,7 +23,7 @@ body {
   margin-top: 80px;
 }
 
-/* 'Biggest thread of giant panda' text */
+/* "Biggest thread of giant panda" */
 .headerintext {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
@@ -171,22 +171,14 @@ td {
   font-size: 3vw;
 }
 
-/* Last image of the webpage, the prisoner Panda */
-.GiantPandaBamboo {
-  display: block;
-  margin-left: 50px;
-  margin-right: auto;
-  margin-top: 20px;
+/* Text of the graph */
+.barchartintext {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  padding: 3%;
 }
 
-.PandaAdoption {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
-
-.container3 {
+.barcharttext {
   background-image: url("./assets/New_Photos_10.png.jpg");
   background-repeat: no-repeat;
   color: black;
@@ -196,13 +188,31 @@ td {
   background-position: center;
 
   background-size: cover;
-  margin-top: 20px;
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-bottom: 15px;
+  margin-top: 80px;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+.text-dark {
+  font-size: 3vw;
 }
 
-/* Text of the table */
+/* Group photo of panda eating bamboo */
+.GiantPandaBamboo {
+  display: block;
+  margin-left: 50px;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+/* Panda Adoption Part */
+.PandaAdoption {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+/* Header of the Adoption Part */
 .adoptionintext {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
@@ -246,6 +256,22 @@ a:link {
   color: rgb(255, 38, 0);
   text-decoration: none;
   font-family: "Times New Roman", Times, serif;
+}
+
+.container3 {
+  background-image: url("./assets/New_Photos_10.png.jpg");
+  background-repeat: no-repeat;
+  color: black;
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+
+  background-size: cover;
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 15px;
 }
 
 /* Hovers */
