@@ -1,18 +1,3 @@
-.chartCard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.chartBox {
-  width: 700px;
-  padding: 20px;
-  border-radius: 20px;
-  border: solid 3px rgba(255, 26, 104, 1);
-  background: white;
-}
-
 body {
   padding: 0px;
   margin: 0px;
@@ -187,8 +172,15 @@ td {
 }
 
 /* Last image of the webpage, the prisoner Panda */
-.GiantPandaPrisoner {
+.GiantPandaBamboo {
   display: block;
+  margin-left: 50px;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.PandaAdoption {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -204,10 +196,43 @@ td {
   background-position: center;
 
   background-size: cover;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-right: 0px;
   margin-left: 0px;
-  margin-bottom: -80px;
+  margin-bottom: 15px;
+}
+
+/* Text of the table */
+.adoptionintext {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  padding: 3%;
+}
+
+.adoptiontext {
+  background-image: url("./assets/New_Photos_10.png.jpg");
+  background-repeat: no-repeat;
+  color: black;
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+
+  background-size: cover;
+  margin-top: 80px;
+  margin-right: 60px;
+  margin-left: 60px;
+  margin-bottom: -150px;
+}
+.text-dark {
+  font-size: 3vw;
+}
+
+.responsive {
+  margin-top: 140px;
+  margin-bottom: -200px;
+  width: 20%;
+  height: auto;
 }
 
 .form-group {
