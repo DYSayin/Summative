@@ -155,11 +155,11 @@
 <section id="graph" class="p-5">
 <div class="graphtext">
   <div class="graphintext">
-    <h3 class='text-dark'>This plot shows the global temperature changes from 1880 to 2020 in Global, Northern Hemisphere and Southern Hemisphere</h3>
+    <h3 class='text-dark'>This plot shows the global temperature changes(in Celsius degree) from 1880 to 2020 in Global, Northern Hemisphere and Southern Hemisphere</h3>
   </div>
 </div>
 
-<!-- MAIN CHART WITH CSV -->   
+<!-- MAIN CHART WITH CSV -->  
 <!-- I used this links to create this Chart:
       -For Templates; "https://www.chartjs3.com/docs/chart/getting-started/"
       -Adding CSV; "https://youtu.be/HFAjrai-d58" and "https://youtu.be/xgDD30ZLxVo"-->
@@ -229,17 +229,7 @@ d3.csv(chartData).then(function(datapoints) {
 
 
 
-
-
-
-  
-  <div class="graph1">
-    <img src="./assets/graph1.png " class="rounded mx-auto d-block img-fluid"
-    alt="temperature change from 1850 to 2018" >
-
-  </div>
-
-  <br>
+<br>
 </section>
 
   <!-- Table of changes in global climate and weather events -->
@@ -376,18 +366,7 @@ d3.csv(chartData).then(function(datapoints) {
 </div>
 </section>
 
-<!-- Pandas' Gifs  -->
-<div class="Gifs">
 
-<div class="gif1">
-<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/19b18a22-f548-44d2-a940-0d31c7a5bd0a/d8bepog-dc084eb9-47c0-4c49-8802-bf2a03bfa460.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE5YjE4YTIyLWY1NDgtNDRkMi1hOTQwLTBkMzFjN2E1YmQwYVwvZDhiZXBvZy1kYzA4NGViOS00N2MwLTRjNDktODgwMi1iZjJhMDNiZmE0NjAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TRdyQwDHB59IbkahrHaKmteiZZ59g-Us09su8MOPMXo" alt="Nature" class="responsive0" width="300px" height="300px">
-</div>
-
-<div class="gif1">
-<img src="https://i.pinimg.com/originals/98/1c/d9/981cd9b99946eb8ef6605e66906e8780.gif" alt="Nature" class="responsive00" width="300px" height="300px">
-</div>
-
-</div>
 
 
 
@@ -403,7 +382,7 @@ d3.csv(chartData).then(function(datapoints) {
 
   <div class="barcharttext">
     <div class="barchartintext">
-      <h3 class='text-dark'>This bar chart shows the changes in global climate and weather events</h3>
+      <h3 class='text-dark'>This bar chart shows the number of Giant Pandas living in the wild and in captivity</h3>
     </div>
   </div>
 
@@ -435,9 +414,6 @@ d3.csv(chartData0).then(function(datapoints) {
     }
     
     const ctx0 = document.getElementById('myChart1').getContext('2d');
-
-    console.log(Wild_Population)
-    console.log(datapoints)
 
     const myChart1 = new Chart(ctx0, {
         type: 'bar',
@@ -496,9 +472,9 @@ d3.csv(chartData0).then(function(datapoints) {
   <img src="./assets/Click.here.gif" alt="Nature" class="responsive">
 
   <a href="https://gifts.worldwildlife.org/gift-center/gifts/Species-Adoptions/Panda.aspx?sc=AWY1800OQ18317A01909RX">
-     <div class="GiantPandaPrisoner">
+     <div class="__GiantPanda__">
       <img src="./assets/panda_image.jpg" class="rounded mx-auto d-block w-50 h-30 img-fluid"
-      alt="giantpandaprisoner">
+      alt="_giantpanda_">
     </div>
   </a>
 
@@ -531,7 +507,7 @@ d3.csv(chartData0).then(function(datapoints) {
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1"> Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="on">
     </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -573,8 +549,11 @@ d3.csv(chartData0).then(function(datapoints) {
                 <a href="https://www.worldwildlife.org/pages/giant-pandas-and-climate" class="dropdown-item">(4) Photos from WWF</a>
                 <a href="https://nationalzoo.si.edu/animals/giant-panda" class="dropdown-item">(5) Information and Photos from Smithsonian's</a>
                 <a href="https://en.wikipedia.org/wiki/Giant_panda" class="dropdown-item">(6) Information from Wikipedia</a>
-                <a href="https://www.w3schools.com/" class="dropdown-item">(7) HTML and CSS guideline from w3schools</a>
-            </div>
+                <a href="https://data.giss.nasa.gov/gistemp/" class="dropdown-item">(7) Line Chart's data</a>
+                <a href="https://www.statista.com/chart/18740/panda-populations-in-the-wild-and-in-captivity/" class="dropdown-item">(8) Bar Chart's data</a>
+                <a href="https://www.w3schools.com/" class="dropdown-item">(9) HTML, CSS and JS guideline from w3schools</a>
+                <a href="https://getbootstrap.com/" class="dropdown-item">(10) Last but not least: Bootstrap</a>
+              </div>
           </div>
 
      
