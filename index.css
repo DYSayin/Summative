@@ -258,6 +258,7 @@ a:link {
   font-family: "Times New Roman", Times, serif;
 }
 
+/* Form for creating account */
 .container3 {
   background-image: url("./assets/New_Photos_10.png.jpg");
   background-repeat: no-repeat;
@@ -276,7 +277,7 @@ a:link {
 
 /* Hovers */
 a:hover {
-  color: aqua;
+  color: rgb(179, 255, 0);
   background-color: transparent;
   text-decoration: underline;
 }
